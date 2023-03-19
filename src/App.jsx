@@ -1,21 +1,19 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useRoutes } from "react-router-dom";
+// import { shallowEqual, useDispatch, useSelector } from "react-redux";
+
 import routes from "./router";
-import HYRequest from "./services/request"
+import AppHeader from "./components/app-header";
+import AppFooter from "./components/app-footer";
+
+
 
 function App() {
-  // 函数式组件使用useEffect发起请求，class组件在componentDidmount里发起请求
-  useEffect(() => {
-    HYRequest.get({
-      url: "/home/highscore"
-    }).then((res) => { console.log(res); })
-  }, [])
   return (
-    <div className="App">
-      路由：
-      <div>
-        {useRoutes(routes)}
-      </div>
+    <div>
+      <AppHeader />
+      <div>{useRoutes(routes)}</div>
+      <AppFooter />
     </div>
   );
 }

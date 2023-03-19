@@ -2,6 +2,11 @@
   padding: 0;
   margin: 0;
 }
+body {
+  font-size: 14px;
+  font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+  -webkit-font-smoothing: antialiased;
+}
 a {
   color: #484848;
   text-decoration: none;
