@@ -1,16 +1,15 @@
 
-import React, { memo, useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { memo } from 'react'
+// import { connect } from 'react-redux'
 import { EntireWrapper } from './style'
-import { fetchEntireDataAction } from '@/store/entire/actionCreators'
+// import { fetchEntireDataAction } from '@/store/entire/actionCreators'
 import { useNavigate } from 'react-router-dom'
 
 const BottomEntire = memo((props) => {
   const navigate = useNavigate()
-  useEffect(() => {
-    props.getEntireData()
-    console.log(props);
-  })
+  // useEffect(() => {
+  //   props.getEntireData()
+  // }, [])
   function clickNavigate() {
     navigate('/entire')
   }
@@ -22,17 +21,18 @@ const BottomEntire = memo((props) => {
 })
 
 // 使用老方法获取映射redux数据
-function mapStateToProps(state) {
-  return {
-    entireData: state.entire.entireData
-  }
-}
+// function mapStateToProps(state) {
+//   return {
+//     houseList: state.entire.houseList
+//   }
+// }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    getEntireData() {
-      dispatch(fetchEntireDataAction())
-    }
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(BottomEntire)
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     getEntireData() {
+//       dispatch(fetchEntireDataAction())
+//     }
+//   }
+// }
+// export default connect(mapStateToProps, mapDispatchToProps)(BottomEntire)
+export default BottomEntire

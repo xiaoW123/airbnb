@@ -14,7 +14,7 @@ import theme from './assets/theme'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // 严格模式
-  <React.StrictMode>
+  <div>
     {/* 使用react-redux工具联系redux-toolkit 与 react */}
     < Provider store={store} >
       {/* 路由 */}
@@ -24,12 +24,14 @@ root.render(
           {/* 主题配置 */}
           < ThemeProvider theme={theme} >
             <App />
-          </ ThemeProvider>
+          </ ThemeProvider >
 
         </Suspense >
       </HashRouter >
     </Provider >
-  </React.StrictMode>
+  </div>
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function

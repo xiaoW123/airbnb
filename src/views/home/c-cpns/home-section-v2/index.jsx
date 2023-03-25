@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import HomeSectionV3 from '../home-section-v3'
+import HomeSection from '../home-section'
 import { V2Warpper } from './style'
 
 
@@ -11,7 +11,7 @@ const HomeSectionV2 = memo((props) => {
 
   return (
     <V2Warpper>
-      {infoData && dest_address && <HomeSectionV3
+      {infoData && dest_address && <HomeSection
         viewWidth="33.33%"
         title={title}
         subtitle={subtitle}

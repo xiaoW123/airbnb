@@ -1,7 +1,11 @@
 import hyRequest from '../request'
 
-export function getEntire() {
+export function getEntire(offset = 0, size = 20) {
   return hyRequest.get({
-    url: 'http://codercba.com:1888/airbnb/api/entire/list?offset=0&size=20'
+    url: '/entire/list',
+    params: {
+      offset,
+      size
+    }
   })
 }

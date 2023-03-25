@@ -3,11 +3,24 @@ import React, { memo } from 'react'
 import { Rate } from 'antd';
 
 import { RoomItemWrapper } from './style'
+import { useNavigate } from 'react-router-dom';
+import { changeDetailInfosAction } from '@/store/detail'
+import { useDispatch } from 'react-redux';
 
 const RoomItem = memo((props) => {
-  const { listItem, viewWidth } = props
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const { listItem, viewWidth, isDetail = false } = props
+  function itemClick() {
+    if (isDetail) {
+      navigate('/detail')
+      dispatch(changeDetailInfosAction(listItem))
+    }
+  }
+
+
   return (
-    <RoomItemWrapper viewWidth={viewWidth}>
+    <RoomItemWrapper viewWidth={viewWidth} onClick={itemClick}>
       <div className='room_item'>
         <div className='room_item_img'>
           <img src={listItem.picture_url} alt="" />
